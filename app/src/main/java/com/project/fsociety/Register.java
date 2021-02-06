@@ -17,6 +17,8 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
     private final static int RC_SIGN_IN = 123;
@@ -67,7 +69,7 @@ public class Register extends AppCompatActivity {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
+                        saveUserDetails(mAuth.getCurrentUser());
 
                         Intent intent = new Intent(this, PageOne.class);
                         startActivity(intent);
@@ -75,5 +77,24 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(this, "Authentication failed (2).", Toast.LENGTH_LONG).show();
                     }
                 });
+    }
+
+    private void saveUserDetails(FirebaseUser user) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = database.getReference();
+
+        UserDetails userDetails = new UserDetails(user.getEmail(), user.getDisplayName());
+
+        databaseReference.child(user.getUid()).setValue(userDetails);
+    }
+}
+
+class UserDetails {
+    public final String email_address;
+    public final String name;
+
+    UserDetails(String emailAddress, String name) {
+        this.email_address = emailAddress;
+        this.name = name;
     }
 }
