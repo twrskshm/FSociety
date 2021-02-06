@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "373865269451",
+    "project_id": "fsociety-5eb63",
+    "storage_bucket": "fsociety-5eb63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373865269451:android:6bf6cd4c0c618fa7f4734e",
+        "android_client_info": {
+          "package_name": "com.project.fsociety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "373865269451-k3f2kn4ufbqtshk9la3sfsl5fkijmtbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1iSErNHNapD9OV75HSfpGv2_-Ub7Eytg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "373865269451-k3f2kn4ufbqtshk9la3sfsl5fkijmtbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
