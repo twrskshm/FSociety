@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FSociety">
-        <activity android:name=".Register"></activity>
+        <activity android:name=".PageOne"></activity>
+        <activity android:name=".Register" />
         <activity android:name=".First">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
